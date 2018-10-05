@@ -150,6 +150,7 @@ function relatedBooks(bookId, authors, books) {
   //       ...titles,
   //       ...titlesByAuthorName(author.name, authors, books)
   //     ])
+  //     ...new Set(titles.concat(titlesByAuthorName(author.name, authors, books)))
   //   ],
   //   []
   // );
