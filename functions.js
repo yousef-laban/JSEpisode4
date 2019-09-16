@@ -144,7 +144,10 @@ function relatedBooks(bookId, authors, books) {
   /* "One-liner" using reduce */
   // return getBookById(bookId, books).authors.reduce(
   //   (titles, author) => [
-  //     ...new Set(titles.concat(titlesByAuthorName(author.name, authors, books)))
+  //     ...new Set([
+  //       ...titles,
+  //       ...titlesByAuthorName(author.name, authors, books)
+  //     ])
   //   ],
   //   []
   // );
