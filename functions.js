@@ -46,11 +46,8 @@ function booksByColor(books) {
   const colors = {};
 
   books.forEach(book => {
-    if (colors[book.color]) {
-      colors[book.color].push(book.title);
-    } else {
-      colors[book.color] = [book.title];
-    }
+    if (colors[book.color]) colors[book.color].push(book.title);
+    else colors[book.color] = [book.title];
   });
 
   return colors;
@@ -68,6 +65,15 @@ function titlesByAuthorName(authorName, authors, books) {
   const author = getAuthorByName(authorName, authors);
   if (!author) return [];
   return author.books.map(bookId => getBookById(bookId, books).title);
+
+  /* Khalid's Solution */
+  // return books
+  //   .filter(book =>
+  //     book.authors.some(
+  //       author => author.name.toLowerCase() === authorName.toLowerCase()
+  //     )
+  //   )
+  //   .map(book => book.title);
 }
 
 /**************************************************************
@@ -87,6 +93,11 @@ function mostProlificAuthor(authors) {
   });
 
   return prolificAuthor.name;
+
+  /* One-liner using .sort solution */
+  // return authors.sort(
+  //   (authorA, authorB) => authorA.books.length - authorB.books.length
+  // )[0].name;
 
   /* One-liner using reduce and a ternary operator */
   // return authors.reduce((a, b) => (a.books.length > b.books.length ? a : b))
@@ -156,6 +167,18 @@ function friendliestAuthor(authors) {
         author.coauthoringCount += sharedBooks.length;
       }
     });
+
+    /* Alternative with reduce */
+    // author.coauthoringCount = authors.reduce(
+    //   (coauthoringCount, secondAuthor) => {
+    //     if (secondAuthor.name !== author.name)
+    //       coauthoringCount += secondAuthor.books.filter(bookId =>
+    //         author.books.includes(bookId)
+    //       ).length;
+    //     return coauthoringCount;
+    //   },
+    //   0
+    // );
   });
 
   let friendlyAuthor = authors[0];
@@ -167,6 +190,11 @@ function friendliestAuthor(authors) {
   });
 
   return friendlyAuthor.name;
+
+  /* Alternative with sort */
+  // return authors.sort(
+  //   (authorA, authorB) => authorB.coauthoringCount - authorA.coauthoringCount
+  // )[0].name;
 }
 
 module.exports = {
