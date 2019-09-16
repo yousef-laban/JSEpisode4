@@ -134,9 +134,11 @@ function relatedBooks(bookId, authors, books) {
   book.authors.forEach(
     author =>
       (titles = titles.concat(titlesByAuthorName(author.name, authors, books)))
+    /* BONUS */
+    // titles = titles.concat(titlesByAuthorName(author.name, authors, books).filter(book => !titles.includes(book)))
   );
 
-  /* BONUS */
+  /* Alternate BONUS */
   // titles = [...new Set(titles)];
 
   return titles;
