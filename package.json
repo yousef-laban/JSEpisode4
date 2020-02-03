@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "babel-jest": "^23.4.0",
+    "babel-jest": "^25.1.0",
     "babel-preset-env": "^1.7.0",
-    "jest": "^23.4.1"
+    "jest": "^25.1.0"
   },
   "scripts": {
     "test": "CI=true jest"
