@@ -1,5 +1,5 @@
 {
-  "name": "JSEpisode1",
+  "name": "JSEpisode4",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,6 +9,6 @@
     "jest": "^23.4.1"
   },
   "scripts": {
-    "test": "jest --watch"
+    "test": "CI=true jest"
   }
 }
