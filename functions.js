@@ -1,3 +1,6 @@
+const authors = require("./authors.json");
+const books = require("./books.json");
+
 /**************************************************************
  * getBookById(bookId, books):
  * - receives a bookId
@@ -8,6 +11,7 @@
 function getBookById(bookId, books) {
   // Your code goes here
 }
+// console.log(getBookById(12, books));
 
 /**************************************************************
  * getAuthorByName(authorName, authors):
@@ -19,6 +23,7 @@ function getBookById(bookId, books) {
 function getAuthorByName(authorName, authors) {
   // Your code goes here
 }
+// console.log(getAuthorByName("J.K. Rowling", authors));
 
 /**************************************************************
  * bookCountsByAuthor(authors):
@@ -29,6 +34,7 @@ function getAuthorByName(authorName, authors) {
 function bookCountsByAuthor(authors) {
   // Your code goes here
 }
+// console.log(bookCountsByAuthor(authors));
 
 /**************************************************************
  * booksByColor(books):
@@ -44,6 +50,7 @@ function booksByColor(books) {
 
   return colors;
 }
+// console.log(booksByColor(books));
 
 /**************************************************************
  * titlesByAuthorName(authorName, authors, books):
@@ -56,6 +63,7 @@ function booksByColor(books) {
 function titlesByAuthorName(authorName, authors, books) {
   // Your code goes here
 }
+// console.log(titlesByAuthorName("George R.R. Martin", authors, books));
 
 /**************************************************************
  * mostProlificAuthor(authors):
@@ -67,6 +75,7 @@ function titlesByAuthorName(authorName, authors, books) {
 function mostProlificAuthor(authors) {
   // Your code goes here
 }
+// console.log(mostProlificAuthor(authors));
 
 /**************************************************************
  * relatedBooks(bookId, authors, books):
@@ -94,6 +103,7 @@ function mostProlificAuthor(authors) {
 function relatedBooks(bookId, authors, books) {
   // Your code goes here
 }
+// console.log(relatedBooks(50, authors, books));
 
 /**************************************************************
  * friendliestAuthor(authors):
@@ -104,6 +114,7 @@ function relatedBooks(bookId, authors, books) {
 function friendliestAuthor(authors) {
   // Your code goes here
 }
+// console.log(friendliestAuthor(authors));
 
 module.exports = {
   getBookById,
@@ -113,22 +124,10 @@ module.exports = {
   titlesByAuthorName,
   mostProlificAuthor,
   relatedBooks,
-  friendliestAuthor
+  friendliestAuthor,
 };
 
 /**
  * Uncomment the following lines if you
  * want to manually test your code
  */
-
-// const authors = require("./authors.json");
-// const books = require("./books.json");
-
-// console.log(getBookById(12, books));
-// console.log(getAuthorByName("J.K. Rowling", authors));
-// console.log(bookCountsByAuthor(authors));
-// console.log(booksByColor(books));
-// console.log(titlesByAuthorName("George R.R. Martin", authors, books));
-// console.log(mostProlificAuthor(authors));
-// console.log(relatedBooks(50, authors, books));
-// console.log(friendliestAuthor(authors));
